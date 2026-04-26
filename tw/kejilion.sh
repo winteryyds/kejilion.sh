@@ -550,7 +550,7 @@ while true; do
 			docker restart $dockername
 			;;
 		6)
-			send_stats "啟動所有容器"
+			send_stats "启动所有容器"
 			docker start $(docker ps -a -q)
 			;;
 		7)
@@ -756,7 +756,7 @@ install_crontab() {
 				service cron start
 				;;
 			*)
-				echo "不支援的發行版:$ID"
+				echo "不支持的发行版: $ID"
 				return
 				;;
 		esac
@@ -1186,12 +1186,12 @@ iptables_panel() {
 				  ;;
 
 			  5)
-				  # IP 白名單
-				  read -e -p "請輸入放行的IP或IP段:" o_ip
+				  # IP 白名单
+				  read -e -p "请输入放行的IP或IP段: " o_ip
 				  allow_ip $o_ip
 				  ;;
 			  6)
-				  # IP 黑名單
+				  # IP 黑名单
 				  read -e -p "請輸入封鎖的IP或IP段:" c_ip
 				  block_ip $c_ip
 				  ;;
@@ -6567,7 +6567,7 @@ linux_tools() {
   while true; do
 	  clear
 	  # send_stats "基礎工具"
-	  echo -e "基礎工具"
+	  echo -e "基础工具"
 	  echo -e "${gl_kjlan}------------------------"
 	  echo -e "${gl_kjlan}1.   ${gl_bai}curl 下載工具${gl_huang}★${gl_bai}                   ${gl_kjlan}2.   ${gl_bai}wget 下載工具${gl_huang}★${gl_bai}"
 	  echo -e "${gl_kjlan}3.   ${gl_bai}sudo 超級管理權限工具${gl_kjlan}4.   ${gl_bai}socat 通訊連接工具"
@@ -7872,7 +7872,7 @@ linux_ldnmp() {
 	echo -e "${gl_huang}9.   ${gl_bai}安裝LinkStack分享連結平台${gl_huang}20.  ${gl_bai}自訂動態站點"
 	echo -e "${gl_huang}------------------------"
 	echo -e "${gl_huang}21.  ${gl_bai}僅安裝nginx${gl_huang}★${gl_bai}                     ${gl_huang}22.  ${gl_bai}網站重定向"
-	echo -e "${gl_huang}23.  ${gl_bai}站點反向代理-IP+端口${gl_huang}★${gl_bai}            ${gl_huang}24.  ${gl_bai}站點反向代理-域名"
+	echo -e "${gl_huang}23.  ${gl_bai}站點反向代理-IP+端口${gl_huang}★${gl_bai}            ${gl_huang}24.  ${gl_bai}站点反向代理-域名"
 	echo -e "${gl_huang}25.  ${gl_bai}安裝Bitwarden密碼管理平台${gl_huang}26.  ${gl_bai}安裝Halo部落格網站"
 	echo -e "${gl_huang}27.  ${gl_bai}安裝AI繪畫提示詞產生器${gl_huang}28.  ${gl_bai}站點反向代理-負載平衡"
 	echo -e "${gl_huang}30.  ${gl_bai}自訂靜態站點"
@@ -8601,7 +8601,7 @@ linux_ldnmp() {
 	  echo "-------------------------"
 	  ls -lt /home/*.gz | awk '{print $NF}'
 	  echo ""
-	  read -e -p  "回車鍵還原最新的備份，輸入備份檔名還原指定的備份，輸入0退出：" filename
+	  read -e -p  "回車鍵還原最新的備份，輸入備份檔案名稱還原指定的備份，輸入0退出：" filename
 
 	  if [ "$filename" == "0" ]; then
 		  break_end
@@ -12140,7 +12140,7 @@ while true; do
 	  	echo "-------------------------"
 	  	ls -lt /app*.gz | awk '{print $NF}'
 	  	echo ""
-	  	read -e -p  "回車鍵還原最新的備份，輸入備份檔名還原指定的備份，輸入0退出：" filename
+	  	read -e -p  "回車鍵還原最新的備份，輸入備份檔案名稱還原指定的備份，輸入0退出：" filename
 
 	  	if [ "$filename" == "0" ]; then
 			  break_end
@@ -13017,7 +13017,7 @@ EOF
 					  1)
 						  read -e -p "請輸入新任務的執行指令:" newquest
 						  echo "------------------------"
-						  echo "1. 每月任務 2. 每週任務"
+						  echo "1. 每月任务                 2. 每周任务"
 						  echo "3. 每天任務 4. 每小時任務"
 						  echo "------------------------"
 						  read -e -p "請輸入你的選擇:" dingshi
@@ -13288,7 +13288,7 @@ EOF
 			  echo "TG-bot監控預警功能"
 			  echo "影片介紹: https://youtu.be/vLL-eb3Z_TY"
 			  echo "------------------------------------------------"
-			  echo "您需要設定tg機器人API和接收預警的使用者ID，即可實現本機CPU，內存，硬碟，流量，SSH登入的即時監控預警"
+			  echo "您需要設定tg機器人API和接收預警的用戶ID，即可實現本機CPU，內存，硬碟，流量，SSH登入的即時監控預警"
 			  echo "到達閾值後會向用戶發送預警訊息"
 			  echo -e "${gl_hui}-關於流量，重啟伺服器將重新計算-${gl_bai}"
 			  read -e -p "確定繼續嗎？ (Y/N):" choice
@@ -13682,10 +13682,10 @@ linux_file() {
 				read -e -p "請輸入檔名:" filename
 				read -e -p "請輸入權限 (如 755):" perm
 				chmod "$perm" "$filename" && echo "權限已修改" || echo "修改失敗"
-				send_stats "修改檔案權限"
+				send_stats "修改文件权限"
 				;;
 			14) # 重命名文件
-				read -e -p "請輸入目前檔名:" current_name
+				read -e -p "请输入当前文件名: " current_name
 				read -e -p "請輸入新檔名:" new_name
 				mv "$current_name" "$new_name" && echo "文件已重新命名" || echo "重新命名失敗"
 				send_stats "重新命名文件"
@@ -14069,7 +14069,7 @@ while true; do
 			CheckFirstRun_true
 			yinsiyuanquan2
 			cp -f ~/kejilion.sh /usr/local/bin/k > /dev/null 2>&1
-			echo -e "${gl_lv}腳本已更新到最新版本！${gl_huang}v$sh_v_new${gl_bai}"
+			echo -e "${gl_lv}腳本已更新至最新版本！${gl_huang}v$sh_v_new${gl_bai}"
 			send_stats "腳本已經最新$sh_v_new"
 			break_end
 			~/kejilion.sh
